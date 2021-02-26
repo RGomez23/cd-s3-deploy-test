@@ -15,5 +15,8 @@ jobs:
           name: Install awscli 
           command: |
             pip3 install awscli
+      - run: # Deploy to S3 using the sync command
+           name: Deploy to S3
+           command: aws s3 sync . s3://sln-s3-deploy-test
             
           
