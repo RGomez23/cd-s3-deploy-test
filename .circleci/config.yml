@@ -10,11 +10,11 @@ jobs:
       - image: cimg/python:3.9.2
       - image: circleci/mongo:4.2.0
 
-    steps: 
-      - setup_remote_docker
+    steps:
+    
       - run: # Test mongo
           name: Test
           command: |
-            mongo --version
+            echo ls
     
           
