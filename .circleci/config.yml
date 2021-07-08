@@ -7,17 +7,20 @@ general:
 jobs:
   build:
     docker:
-      - image: circleci/mongo:latest
+       - image: cimg/python:3.9.2
+       - image: circleci/mongo:latest
 
     steps: 
+      - setup_remote_docker
+      - run:
+          name: Waiting for Mongo
+          command: dockerize -wait tcp://localhost:27017 -timeout 1m
       - run: # Test mongo
           name: Test
           command: |
             mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
-      - run: # Install the AWS CLI if it is not already included in the docker image
-          name: Install awscli 
-          command: |
-            pip3 install awscli
+            ls
+      
             
             
     
