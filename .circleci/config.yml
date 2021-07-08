@@ -8,15 +8,13 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.9.2
+      - image: circleci/mongo:latest
 
     steps:
-      - checkout
-      - run: # Install the AWS CLI if it is not already included in the docker image
-          name: Install awscli 
+      - run: # Test mongo
+          name: Test
           command: |
-            pip3 install awscli
-      - run: # Deploy to S3 using the sync command
-           name: Deploy to S3
-           command: aws s3 sync . s3://sln-s3-deploy-test
+            mongodump --version returns:
+     
             
           
