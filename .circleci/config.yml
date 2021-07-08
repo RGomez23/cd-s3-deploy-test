@@ -13,8 +13,6 @@ jobs:
       - run: # Test mongo
           name: Test
           command: |
-            git clone https://github.com/mongodb/mongo-tools
-            cd mongo-tools
-            ls
+            sudo apt install -y mongodb
     
           
