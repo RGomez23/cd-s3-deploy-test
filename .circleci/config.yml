@@ -10,10 +10,11 @@ jobs:
      - image: circleci/mongo:latest
 
     steps: 
-      - run: # Test mongo
-          apt-get update
-      - run: # Test mongo
-         apt-get -y install curl
+      - run: # Deploy to S3 using the sync command
+           name: Test
+           command: |
+              apt-get update
+              apt-get -y install curl
 
 
 
