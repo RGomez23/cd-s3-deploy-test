@@ -13,7 +13,7 @@ jobs:
       - run: # Test mongo
           name: Test
           command: |
-            python3 --version
+            mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
             
             
     
