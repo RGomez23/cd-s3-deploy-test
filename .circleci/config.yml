@@ -7,16 +7,14 @@ general:
 jobs:
   build:
     docker:
-       - image: mongo
-       
+     - image: circleci/mongo:latest
 
     steps: 
       - run: # Test mongo
-          name: Test
-          command: |
-            mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
-            ls
-            whereis python
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws --version
       
             
             
