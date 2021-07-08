@@ -26,4 +26,4 @@ jobs:
                 mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
       - run: # Deploy to S3 using the sync command
                 name: Deploy to S3
-                command: aws s3 sync dump s3://db-backups-solena
+                command: aws s3 sync dump s3://db-backups-solena/"`date +"%d-%m-%Y"`"
