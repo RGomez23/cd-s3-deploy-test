@@ -11,7 +11,8 @@ jobs:
 
     steps: 
       - run: # Test mongo
-          apt install curl
+          apt-get update
+          apt-get -y install curl
         
       
             
