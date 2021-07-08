@@ -8,16 +8,12 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.9.2
-      - image: circleci/mongo:latest
+      - image: circleci/mongo:4.2.0
 
     steps:
       - run: # Test mongo
           name: Test
           command: |
-            cd .. 
-      - run: # Test mongo
-          name: Test
-          command: |
-            ls
-            
+            mongo --version
+    
           
