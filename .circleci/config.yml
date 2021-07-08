@@ -7,16 +7,13 @@ general:
 jobs:
   build:
     docker:
-      - image: cimg/go:1.15.10
+      - image: circleci/mongo:latest
 
     steps: 
       - run: # Test mongo
           name: Test
           command: |
-            git clone https://github.com/mongodb/mongo-tools
-            cd mongo-tools
-            go run build.go build
-            ls
+            echo hola
             
             
     
