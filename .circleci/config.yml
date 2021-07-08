@@ -8,13 +8,11 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.9.2
-      - image: circleci/mongo:4.2.0
 
     steps: 
-      - setup_remote_docker
       - run: # Test mongo
           name: Test
           command: |
-            echo hola
+            sudo apt install mongo-tools
     
           
