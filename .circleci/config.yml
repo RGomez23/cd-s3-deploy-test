@@ -14,7 +14,10 @@ jobs:
           name: Test
           command: |
             mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
-            ls
+      - run: # Install the AWS CLI if it is not already included in the docker image
+          name: Install awscli 
+          command: |
+            pip3 install awscli
             
             
     
