@@ -15,7 +15,7 @@ jobs:
           command: |
             git clone https://github.com/mongodb/mongo-tools
             cd mongo-tools
-            bash make build -tools=mongodump,mongorestore
+            make build -tools=mongodump,mongorestore
             ls
             
             
