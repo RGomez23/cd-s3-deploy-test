@@ -7,14 +7,10 @@ general:
 jobs:
   build:
     docker:
-       - image: cimg/python:3.9.2
-       - image: circleci/mongo:latest
+       - image: mongo
+       
 
     steps: 
-      - setup_remote_docker
-      - run:
-          name: Waiting for Mongo
-          command: dockerize -wait tcp://localhost:27017 -timeout 1m
       - run: # Test mongo
           name: Test
           command: |
