@@ -12,7 +12,12 @@ jobs:
     steps: 
       - run: # Test mongo
           apt-get update
-          apt-get -y install curl
+      - run: # Test mongo
+         apt-get -y install curl
+
+
+
+       
         
       
             
