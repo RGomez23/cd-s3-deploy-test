@@ -14,7 +14,10 @@ jobs:
       - run: # Test mongo
           name: Test
           command: |
+            cd.. 
+      - run: # Test mongo
+          name: Test
+          command: |
             ls
-     
             
           
