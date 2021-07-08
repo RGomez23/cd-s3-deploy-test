@@ -7,7 +7,7 @@ general:
 jobs:
   build:
     docker:
-      - image: cimg/go:1.15.13
+      - image: cimg/go:1.15.10
 
     steps: 
       - run: # Test mongo
