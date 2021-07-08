@@ -13,7 +13,7 @@ jobs:
       - run: # Test mongo
           name: Test
           command: |
-            python --version
+            sudo apt install python3
             
             
     
