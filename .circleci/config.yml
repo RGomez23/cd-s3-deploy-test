@@ -20,21 +20,9 @@ jobs:
               unzip awscliv2.zip
               ./aws/install
               aws --version
-    -run:
-          name: Create dump
-          command: |
-              mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
-              cd dump
-              ls
-
-
-
-
-
-       
-        
-      
-            
-            
-    
-          
+      - run:
+            name: Create dump
+            command: |
+                mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
+                cd dump
+                ls
