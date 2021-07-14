@@ -8,9 +8,6 @@ jobs:
   build:
     docker:
      - image: circleci/mongo:latest
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
     steps: 
       - run: # Install AWS cli
            name: Install AWS cli
@@ -33,3 +30,10 @@ jobs:
       - run: # Deploy to S3 using the sync command
                 name: Deploy to S3
                 command: aws s3 sync dump s3://db-backups-solena/"`date +"%d-%m-%Y"`"
+  workflows:
+    scheduled:
+      triggers:
+        - schedule:
+            cron: "0 0 * * *"
+      jobs:
+        - build
