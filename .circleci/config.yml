@@ -22,11 +22,11 @@ jobs:
       - run:
             name: Create lab dump
             command: |
-                mongodump --uri mongodb+srv://solena:zkYr651NSXH92bOm@cluster0.euggj.gcp.mongodb.net/smart_soil_lab
+                mongodump --uri $SLN_DB_LAB
       - run:
             name: Create sampler dump
             command: |
-                mongodump --uri mongodb+srv://solena:ogAH1RK9dvQhA6IE@cluster0.od7ve.mongodb.net/smart-dev
+                mongodump --uri $SLN_DB_SAMPLER
       - run: # Deploy to S3 using the sync command
                 name: Deploy to S3
                 command: aws s3 sync dump s3://db-backups-solena/"`date +"%d-%m-%Y"`"
