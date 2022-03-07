@@ -23,10 +23,6 @@ jobs:
             name: Create lab dump
             command: |
                 mongodump --uri $SLN_DB_LAB
-      - run:
-            name: Create sampler dump
-            command: |
-                mongodump --uri $SLN_DB_SAMPLER
       - run: # Deploy to S3 using the sync command
                 name: Deploy to S3
                 command: aws s3 sync dump s3://db-backups-solena/"`date +"%d-%m-%Y"`"
@@ -38,7 +34,7 @@ workflows:
       - build
     triggers:
       - schedule:
-           cron: "0 0 * * *"
+           cron: "0 0,6,12,18 * * *"
            filters:
             branches:
               only:
